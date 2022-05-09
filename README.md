@@ -2,7 +2,7 @@
 
 HatSploit API examples.
 
-> curl https://raw.githubusercontent.com/enty8080/HatSploit-API/main/iphone_ssh_brute.py | python3
+> `curl https://raw.githubusercontent.com/enty8080/HatSploit-API/main/iphone_ssh_brute.py | python3`
 
 ```shell
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
